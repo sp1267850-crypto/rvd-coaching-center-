@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RVD Coaching Center</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4f7fb;
+    color:#172033;
+}
+
+/* HEADER */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:linear-gradient(135deg,#102a72,#2563eb);
+    color:white;
+    padding:15px;
+    box-shadow:0 3px 15px #0003;
+}
+
+.nav{
+    max-width:1150px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:21px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    gap:18px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+}
+
+/* HERO */
+
+.hero{
+    min-height:560px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:30px 20px;
+
+    background:
+    linear-gradient(#0008,#0009),
+    linear-gradient(135deg,#2563eb,#111827);
+}
+
+.hero h1{
+    font-size:clamp(38px,9vw,75px);
+    margin-bottom:15px;
+}
+
+.hero h2{
+    font-size:clamp(20px,5vw,32px);
+    margin-bottom:15px;
+}
+
+.hero p{
+    color:#e5e7eb;
+    line-height:1.7;
+    max-width:650px;
+    margin:auto;
+}
+
+.buttons{
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 24px;
+    margin:5px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.btn-yellow{
+    background:#facc15;
+    color:#111;
+}
+
+.btn-green{
+    background:#22c55e;
+    color:white;
+}
+
+/* COMMON */
+
+section{
+    max-width:1150px;
+    margin:auto;
+    padding:60px 18px;
+}
+
+.title{
+    text-align:center;
+    font-size:32px;
+    color:#102a72;
+    margin-bottom:35px;
+}
+
+/* COURSES */
+
+.category{
+    margin-bottom:35px;
+}
+
+.category-title{
+    background:linear-gradient(135deg,#172554,#2563eb);
+    color:white;
+    padding:15px 18px;
+    border-radius:10px;
+    margin-bottom:15px;
+    font-size:21px;
+}
+
+.course-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+    gap:12px;
+}
+
+.course{
+    background:white;
+    padding:17px;
+    border-radius:10px;
+    border:1px solid #e5e7eb;
+    box-shadow:0 3px 12px #0000000d;
+    transition:.25s;
+}
+
+.course:hover{
+    transform:translateY(-4px);
+    box-shadow:0 7px 20px #0002;
+}
+
+.course h3{
+    color:#1d4ed8;
+    font-size:16px;
+    margin-bottom:7px;
+}
+
+.course p{
+    font-size:13px;
+    color:#667085;
+}
+
+/* ABOUT */
+
+.about{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px #0001;
+    line-height:1.8;
+}
+
+/* MANAGER */
+
+.manager{
+    display:flex;
+    justify-content:center;
+}
+
+.manager-card{
+    background:white;
+    width:100%;
+    max-width:450px;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 5px 20px #0001;
+}
+
+.manager-icon{
+    width:90px;
+    height:90px;
+    margin:auto auto 15px;
+    border-radius:50%;
+    background:#2563eb;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:38px;
+}
+
+/* INFO */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
+
+.info{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 18px #0001;
+}
+
+.info h3{
+    color:#2563eb;
+    margin-bottom:10px;
+}
+
+/* CONTACT */
+
+.contact{
+    max-width:none;
+    background:#10204a;
+    color:white;
+    text-align:center;
+}
+
+.contact .title{
+    color:white;
+}
+
+.contact p{
+    margin:10px;
+    font-size:17px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#080f25;
+    color:#9ca3af;
+    text-align:center;
+    padding:25px;
+}
+
+/* MOBILE */
+
+@media(max-width:650px){
+
+    .nav{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    .nav-links{
+        gap:10px;
+    }
+
+    .nav-links a{
+        font-size:12px;
+    }
+
+    .hero{
+        min-height:520px;
+    }
+
+    section{
+        padding:45px 12px;
+    }
+
+    .title{
+        font-size:27px;
+    }
+
+    .course-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .course{
+        padding:13px;
+    }
+
+    .course h3{
+        font-size:14px;
+    }
+}
+
+@media(max-width:380px){
+
+    .course-grid{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="nav">
+
+<div class="logo">
+🎓 RVD COACHING CENTER
+</div>
+
+<div class="nav-links">
+<a href="#home">Home</a>
+<a href="#courses">Courses</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<div class="hero" id="home">
+
+<div>
+
+<h1>RVD COACHING CENTER</h1>
+
+<h2>Computer Education & Professional Courses</h2>
+
+<p>
+CCC • JAVA • PYTHON • Web Development •
+Accounting • Designing • AI • Networking
+और बहुत कुछ
+</p>
+
+<div class="buttons">
+
+<a href="#courses" class="btn btn-yellow">
+📚 सभी Courses देखें
+</a>
+
+<a href="tel:9548703085" class="btn btn-green">
+📞 Call Now
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- COURSES -->
+
+<section id="courses">
+
+<h2 class="title">
+📚 Computer Courses
+</h2>
+
+
+<!-- BASIC -->
+
+<div class="category">
+
+<div class="category-title">
+💻 Basic Computer Courses
+</div>
+
+<div class="course-grid">
+
+<div class="course"><h3>Basic Computer Course</h3><p>Computer fundamentals</p></div>
+<div class="course"><h3>BCC</h3><p>Basic Computer Course</p></div>
+<div class="course"><h3>CCC</h3><p>Course on Computer Concepts</p></div>
+<div class="course"><h3>CCA</h3><p>Certificate in Computer Applications</p></div>
+<div class="course"><h3>DCA</h3><p>Diploma in Computer Applications</p></div>
+<div class="course"><h3>ADCA</h3><p>Advanced Diploma in Computer Applications</p></div>
+<div class="course"><h3>ADIT</h3><p>Advanced Diploma in IT</p></div>
+<div class="course"><h3>PGDCA</h3><p>Post Graduate Diploma in Computer Applications</p></div>
+<div class="course"><h3>Computer Literacy</h3><p>Computer literacy program</p></div>
+<div class="course"><h3>Computer Applications</h3><p>Computer application skills</p></div>
+
+</div>
+</div>
+
+
+<!-- OFFICE -->
+
+<div class="category">
+
+<div class="category-title">
+📝 Office & Typing Courses
+</div>
+
+<div class="course-grid">
+
+<div class="course"><h3>MS Word</h3><p>Document preparation</p></div>
+<div class="course"><h3>MS Excel</h3><p>Spreadsheet skills</p></div>
+<div class="course"><h3>Advanced Excel</h3><p>Advanced spreadsheet skills</p></div>
+<div class="course"><h3>MS PowerPoint</h3><p>Presentation designing</p></div>
+<div class="course"><h3>MS Office</h3><p>Office productivity</p></div>
+<div class="course"><h3>Office Automation</h3><p>Office computer skills</p></div>
+<div class="course"><h3>Computer Typing</h3><p>Typing skills</p></div>
+<div class="course"><h3>Hindi Typing</h3><p>Hindi typing</p></div>
+<div class="course"><h3>English Typing</h3><p>English typing</p></div>
+<div class="course"><h3>Data Entry</h3><p>Data entry skills</p></div>
+<div class="course"><h3>Data Entry Operator</h3><p>Professional data entry</p></div>
+
+</div>
+</div>
+
+
+<!-- PROGRAMMING -->
+
+<div class="category">
+
+<div class="category-title">
+👨‍💻 Programming Courses
+</div>
+
+<div class="course-grid">
+
+<div class="course"><h3>C Programming</h3><p>Programming fundamentals</p></div>
+<div class="course"><h3>C++</h3><p>Object oriented programming</p></div>
+<div class="course"><h3>Java</h3><p>Java programming</p></div>
+<div class="course"><h3>Advanced Java</h3><p>Advanced Java development</p></div>
+<div class="course"><h3>Python</h3><p>Python programming</p></div>
+<div class="course"><h3>Python for AI</h3><p>Python for artificial intelligence</p></div>
+<div class="course"><h3>JavaScript</h3><p>Modern web programming</p></div>
+<div class="course"><h3>PHP</h3><p>Server-side programming</p></div>
+<div class="course"><h3>ASP.NET</h3><p>Web application development</p></div>
+<div class="course"><h3>VB.NET</h3><p>.NET programming</p></div>
+<div class="course"><h3>.NET</h3><p>Application development</p></div>
+<div class="course"><h3>SQL</h3><p>Database programming</p></div>
+<div class="course"><h3>Programming Fundamentals</h3><p>Programming basics</p></div>
+
+</div>
+</div>
+
+
+<!-- WEB -->
+
+<div class="category">
+
+<div class="category-title">
+🌐 Web Development Courses
+</div>
+
+<div class="course-grid">
+
+<div class="course"><h3>HTML</h3><p>Web page structure</p></div>
+<div class="course"><h3>CSS</h3><p>Web page styling</p></div>
+<div class="course"><h3>JavaScript</h3><p>Interactive websites</p></div>
+<div class="course"><h3>Web Designing</h3><p>Website designing</p></div>
+<div class="course"><h3>Web Development</h3><p>Website development</p></div>
+<div class="course"><h3>Full Stack Development</h3><p>Frontend + Backend</p></div>
+<div class="course"><h3>Front-End Development</h3><p>Frontend development</p></div>
+<div class="course"><h3>Back-End Development</h3><p>Backend development</p></div>
+<div class="course"><h3>PHP & MySQL</h3><p>Web database development</p></div>
+<div class="course"><h3>WordPress</h3><p>Website creation</p></div>
+<div class="course"><h3>Website Hosting</h3><p>Website deployment</p></div>
+
+</div>
+</div>
+
+
+<!-- DESIGN -->
+
+<div class="category">
+
+<div class="category-title">
+🎨 Graphic Design & Multimedia
+</div>
+
+<div class="course-grid">
+
+<div class="course"><h3>Photoshop</h3><p>Photo editing</p></div>
+<div class="course"><h3>CorelDRAW</h3><p>Graphic designing</p></div>
+<div class="course"><h3>Illustrator</h3><p>Vector designing</p></div>
+<div class="course"><h3>InDesign</h3><p>Digital publishing</p></div>
+<div class="course"><h3>DTP</h3><p>Desktop publishing</p></div>
+<div class="course"><h3>Graphic Designing</h3><p>Professional graphics</p></div>
+<div class="course"><h3>UI/UX Design</h3><p>User interface design</p></div>
+<div class="course"><h3>Image Editing</h3><p>Digital image editing</p></div>
+<div class="course"><h3>Video Editing</h3><p>Video production</p></div>
+<div class="course"><h3>Audio Editing</h3><p>Audio production</p></div>
+<div class="course"><h3>3D Animation</h3><p>3D animation</p></div>
+<div class="course"><h3>3D Modeling</h3><p>3D model creation</p></div>
+<div class="course"><h3>AutoCAD</h3><p>Computer aided design</p></div>
+
+</div>
+</div>
+
+
+<!-- ACCOUNTING -->
+
+<div class="category">
+
+<div class="category-title">
+📊 Accounting & Business Courses
+</div>
+
+<div class="course-grid">
+
+<div class="course"><h3>Tally</h3><p>Computerized accounting</p></div>
+<div class="course"><h3>Tally Prime</h3><p>Modern accounting software</p></div>
+<div class="course"><h3>GST</h3><p>GST accounting</p></div>
+<div class="course"><h3>Computerized Accounting</h3><p>Digital accounting</p></div>
+<div class="course"><h3>Financial Accounting</h3><p>Financial accounting</p></div>
+<div class="course"><h3>Accounting with GST</h3><p>Accounting and GST</p></div>
+<div class="course"><h3>Professional Accounting</h3><p>Professional accounting skills</p></div>
+<div class="course"><h3>Digital Finance</h3><p>Digital finance</p></div>
+<div class="course"><h3>E-Commerce</h3><p>Online business</p></div>
+
+</div>
+</div>
+
+
+<!-- DIGITAL -->
+
+<div class="category">
+
+<div class="category-title">
+📱 Digital & Internet Courses
+</div>
+
+<div class="course-grid">
+
+<div class="course"><h3>Digital Marketing</h3><p>Online marketing</p></div>
+<div class="course"><h3>Social Media Marketing</h3><p>Social media promotion</p></div>
+<div class="course"><h3>SEO</h3><p>Search engine optimization</p></div>
+<div class="course"><h3>Internet Technology</h3><p>Internet fundamentals</p></div>
+<div class="course"><h3>E-Commerce</h3><p>Online commerce</p></div>
+<div class="course"><h3>Email Technology</h3><p>Email and communication</p></div>
+<div class="course"><h3>Digital Promotion</h3><p>Digital promotion</p></div>
+
+</div>
+</div>
+
+
+<!-- HARDWARE -->
+
+<div class="category">
+
+<div class="category-title">
+🔧 Hardware & Networking
+</div>
+
+<div class="course-grid">
+
+<div class="course"><h3>Computer Hardware</h3><p>Hardware fundamentals</p></div>
+<div class="course"><h3>Computer Assembling</h3><p>PC assembling</p></div>
+<div class="course"><h3>Hardware Troubleshooting</h3><p>Hardware problem solving</p></div>
+<div class="course"><h3>Networking</h3><p>Computer networking</p></div>
+<div class="course"><h3>Network Administration</h3><p>Network management</p></div>
+<div class="course"><h3>Cyber Security</h3><p>Cyber security fundamentals</p></div>
+<div class="course"><h3>IT Support</h3><p>Technical support skills</p></div>
+<div class="course"><h3>Operating Systems</h3><p>OS fundamentals</p></div>
+
+</div>
+</div>
+
+
+<!-- MODERN TECH -->
+
+<div class="category">
+
+<div class="category-title">
+🤖 Modern Technology Courses
+</div>
+
+<div class="course-grid">
+
+<div class="course"><h3>Artificial Intelligence</h3><p>AI fundamentals</p></div>
+<div class="course"><h3>Machine Learning</h3><p>Machine learning basics</p></div>
+<div class="course"><h3>Data Science</h3><p>Data science fundamentals</p></div>
+<div class="course"><h3>Data Analytics</h3><p>Data analysis</p></div>
+<div class="course"><h3>Cloud Computing</h3><p>Cloud technology</p></div>
+<div class="course"><h3>Internet of Things</h3><p>IoT technology</p></div>
+<div class="course"><h3>Robotics</h3><p>Robotics fundamentals</p></div>
+<div class="course"><h3>AR/VR</h3><p>Augmented & Virtual Reality</p></div>
+<div class="course"><h3>Mobile App Development</h3><p>Mobile applications</p></div>
+<div class="course"><h3>Android Development</h3><p>Android apps</p></div>
+
+</div>
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="title">
+🏫 About RVD Coaching Center
+</h2>
+
+<div class="about">
+
+<p>
+<strong>RVD COACHING CENTER</strong> में computer
+education और professional skills से जुड़े विभिन्न
+courses उपलब्ध हैं।
+</p>
+
+<br>
+
+<p>
+यहाँ Basic Computer से लेकर Programming,
+Web Development, Graphic Designing, Accounting,
+Networking और Modern Technology तक के courses
+की जानकारी उपलब्ध है।
+</p>
+
+</div>
+
+</section>
+
+
+<!-- MANAGER -->
+
+<section>
+
+<h2 class="title">
+👨‍💼 Manager
+</h2>
+
+<div class="manager">
+
+<div class="manager-card">
+
+<div class="manager-icon">
+👨‍💼
+</div>
+
+<h2>Mr. Rajiv Kumar</h2>
+
+<p>Manager</p>
+
+<br>
+
+<strong>
+RVD COACHING CENTER
+</strong>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- INFORMATION -->
+
+<section>
+
+<h2 class="title">
+📌 Coaching Information
+</h2>
+
+<div class="info-grid">
+
+<div class="info">
+<h3>⏰ Batch Timing</h3>
+<p>
+सुबह 8:00 बजे से<br>
+शाम 6:00 बजे तक
+</p>
+</div>
+
+<div class="info">
+<h3>💰 CCC Fees</h3>
+<p>
+CCC Course<br>
+<strong>₹3,000</strong>
+</p>
+</div>
+
+<div class="info">
+<h3>💳 Other Courses</h3>
+<p>
+Fees की जानकारी के लिए
+coaching center से contact करें।
+</p>
+</div>
+
+<div class="info">
+<h3>📞 Contact</h3>
+<p>
+9548703085
+</p>
+</div>
+
+<div class="info">
+<h3>📍 Address</h3>
+<p>
+Amanpur, Kasganj,<br>
+Baikunthi School के सामने,<br>
+Uttar Pradesh
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<h2 class="title">
+📞 Contact RVD Coaching Center
+</h2>
+
+<p>
+<strong>Manager:</strong> Mr. Rajiv Kumar
+</p>
+
+<p>
+📱 9548703085
+</p>
+
+<p>
+📍 Amanpur, Kasganj, Uttar Pradesh
+</p>
+
+<br>
+
+<a
+href="tel:9548703085"
+class="btn btn-yellow">
+📞 Call Now
+</a>
+
+<a
+href="https://wa.me/919548703085"
+class="btn btn-green">
+💬 WhatsApp
+</a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 RVD COACHING CENTER
+</p>
+
+<br>
+
+<p>
+Computer Education • Programming • Technology
+</p>
+
+</footer>
+
+</body>
+</html>
